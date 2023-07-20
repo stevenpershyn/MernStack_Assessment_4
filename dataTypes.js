@@ -39,3 +39,14 @@ checkDataType = {
 } // {} - json object or object
 console.log("Data type is - "+ typeof checkDataType)
 console.log("Data is - ", checkDataType)
+
+console.log("Data is - "+ JSON.stringify(checkDataType)) // + someValue.toString()
+
+
+
+//ES6 has new data type - symbol
+
+var mydata = Symbol("Some Value")
+
+console.log("Data type is - "+ typeof mydata)
+console.log("Data is - ", mydata)
