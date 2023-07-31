@@ -19,7 +19,7 @@ var user = {
                     setTimeout(function(){
                         console.log("Inside set timeout!!!");
                         console.log(` ${this.age}  ${this.session}`)                        
-                    }.bind(user), 2000); //bind job is to attach user object whenever function executes
+                    }.bind(this), 2000); //bind job is to attach user object whenever function executes
                 }
             }
 
