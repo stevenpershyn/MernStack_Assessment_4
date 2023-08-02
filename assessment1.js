@@ -5,10 +5,10 @@
 //Q3. Create a function with name show user info, this function expects three params, firstname, lastname and age
 //  print all the details in the given function
 
-//Q4. Create a function with name add pass three parameters and return the sum of all the three numbers
-// below out puts needs to be monitored - add(2,3,4), add(2), add(2.3,3), add("first", 2, "three")
+//Q4. Create a function with name doaddition, pass three parameters and return the sum of all the three numbers
+// below output needs to be monitored - add(2,3,4), add(2), add(2.3,3), add("first", 2, "three")
 // analyse the outputs we got and try explaining the reasons behind
 
 //Q5. A detailed example implementation of event loop using multiple settimeouts
 
-//Q6. Print the topics you remember so far exporting it from one file an printing in another
+//Q6. Print the topics you remember so far exporting it from one file and printing in another
