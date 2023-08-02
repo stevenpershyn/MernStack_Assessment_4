@@ -12,3 +12,5 @@
 //Q5. A detailed example implementation of event loop using multiple settimeouts
 
 //Q6. Print the topics you remember so far exporting it from one file and printing in another
+
+//Q7. Give me an example of your choice on closure, callback, prototype, each.
