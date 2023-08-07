@@ -59,3 +59,28 @@ console.log(stname)
 console.log(math)
 console.log(chemistry)
 console.log(physics)
+
+
+//question :
+
+let StudentTest = {
+    firstname : "Put your name",
+    address : " ??",
+    sessionTopics : {
+        covered1 : "CoreJS",
+        covered2 : "OOJS"
+    }
+}
+
+//print firstname and sessionTopics, 
+//along with that also create a lastname and covered3 as "ES6", without making any change in StudentTest
+
+//create a funtion with name multiply which accepts three parameters, and return multiplication of all
+//but if we dont pass any parameter it returns 0
+
+//create an array of 1 - 5 and add arr[newval] = at 6th place, print the output using for of and for in loop
+
+//create an example of const where we can update on property of the object, where it says const is mutable
+
+//create a for loop using var and let, print each value in timeout after 2 second and to 
+//demonstrate functional scope of var and lexical of let 
