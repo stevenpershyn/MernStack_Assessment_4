@@ -24,3 +24,5 @@ let animalSoundES6 = {
 }
 
 console.log("Animal Sound Using Short Hand ", animalSoundES6)
+
+module.exports = animalSoundES6;
