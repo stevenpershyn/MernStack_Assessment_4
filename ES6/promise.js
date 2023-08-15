@@ -71,10 +71,10 @@ let LunchPromise = new Promise((resolve, reject)=>{
 
 console.log("Promise Status!!! ", LunchPromise);
 
-LunchPromise.then((data)=>{
+LunchPromise.then((data)=>{ // promise is fullfilled or resolved - success response
     console.log(data)
-}).catch((err)=>{
-    console.log(err)
+}).catch((err)=>{ // promise is rejected - errorneous response
+    console.log(err) 
 })
 
 console.log("Promise Completed!!!");
