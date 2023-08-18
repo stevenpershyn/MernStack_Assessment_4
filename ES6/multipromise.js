@@ -66,13 +66,12 @@ console.log("Promises are working... ")
 
 //when we need to check the status of all the promises and then make decision
 Promise.allSettled(
-    [    getUserProducts,
+    [   getUserProducts,
         getUserAccountDetails,
-        getusercart]
+        getusercart
+    ]
     ).then((data)=>{
-        console.log("then ", data)
-    }).catch((err)=>{
-        console.log("catch ",err)
+        console.log("then ", data) //gives output of all the concurrent promises whether resolved or rejected
     })
 
 
