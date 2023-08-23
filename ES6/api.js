@@ -18,3 +18,34 @@
 //it uses http
 //definitive verbs or http method - get/put/post/patch/delete
 //stateless
+
+//http verbs -
+//Create - Post
+//Update - Put and Patch
+//Read - Get
+//Delete - Delete
+
+//Put and Patch
+
+let User = {
+    Name : "Van",
+    Age : 20,
+    Address : "Somewhere on moon!!!",
+    UserId : "12453652"
+}
+
+//change my name - Van Duc Phan
+
+// post - need to create complete object (full replacement)
+let UserUpdated = {
+    Name : "Van Duc Phan",
+    Age : 20,
+    Address : "Somewhere on moon!!!",
+    UserId : "12453652"
+}
+
+// patch - need to create object with data that needs to be changed (partial replacement)
+let UserUpdatedPatch = {
+    Name : "Van Duc Phan",
+    UserId : "12453652"
+}
