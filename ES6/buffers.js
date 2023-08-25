@@ -7,6 +7,7 @@ let len = buf.write("We are learning node implementation");
 console.log("Output from a buffer " + len) //octet length
 
 console.log(buf.toString("utf8"))
+console.log(buf.toString("base64"))
 
 let buf26 = Buffer.alloc(26); 
 for (let i = 0 ; i < 26 ; i++) 
