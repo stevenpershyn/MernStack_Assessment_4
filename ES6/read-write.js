@@ -91,3 +91,13 @@ fsModule.readFile('Text.json','utf8',(err, fileData)=>{
 //save the data in json object that are making MERN stack and MEAN stack as acronym
 //write using writestream and also read and print using readtream upon finish
 //expand it like - M-Mongo, E-Express, R-React and N-Node in JSON format
+
+
+//REPL
+
+//R - Read
+//E - Evaluate
+//P - Print
+//L - Loop
+
+//we need to stop it with ctrl+c cmd+c (sometimes we need to do it twice)
