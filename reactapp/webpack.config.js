@@ -7,6 +7,7 @@ config = {
         filename: 'index.bundle.js'
     },
     // webpack 5 comes with devServer which loads in development mode
+    //api/helloworld >>>
     devServer: {
         port: 9090,
         historyApiFallback : true //localhost:9092/user

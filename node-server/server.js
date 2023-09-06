@@ -80,9 +80,9 @@ adminApp.use('/',adminRoute)
 
 
 //wild card operator / default api
-app.get('*',(req, res)=>{
-  res.send('<h2>API you"re looking for is not ready yet!!! <h2>')
-})
+// app.get('*',(req, res)=>{
+//   res.send('<h2>API you"re looking for is not ready yet!!! <h2>')
+// })
 console.log("We are listening at 9000")
 
 //open the port for api to start listening the request/web-request
