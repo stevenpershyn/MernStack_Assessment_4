@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 
 import Header from "./CommonComponent/HeaderComponent";
+import ChildComponent from "./CommonComponent/ChildComponent";
+import HomeComponent from "./CommonComponent/HomeComponent";
+
 
 export default class Application extends Component {
         constructor(props){
@@ -8,7 +11,8 @@ export default class Application extends Component {
 
             //state : is data object to apply changes in react component and call render method to create virtual dom
             this.state = {
-                headerValue : "My First React Application Page"
+                headerValue : "My First React Application Page",
+                age : 18
             }  
             this.number = 20
         }
@@ -37,6 +41,12 @@ export default class Application extends Component {
             evt.preventDefault()//to stop the default behaviour of event bubbling
         }
 
+        executedByChild = (dataFromChild)=>{
+            this.setState({
+                age : dataFromChild
+            })
+        }
+
         render(){
             let name = "Van Duc Phan"
             console.log("Creating virtual dom "+ this.state.headerValue)
@@ -44,11 +54,23 @@ export default class Application extends Component {
             return( 
                 <>
                     <Header />
+
+                    <HomeComponent />
                     <h1>{this.state.headerValue}</h1>   
 
                     <button onClick={this.changeText}>Change Text</button>
                     
+
                     <h2> Hello React {name} </h2>
+                    <h4> Age Value : { this.state.age } </h4>
+                    <hr/>
+                    <ChildComponent name={"Child of Application Component"} 
+                                    header={this.state.headerValue}
+                                    callBackFunc={this.executedByChild} >
+                        <b> First HTML Element </b>
+                        <b> Second HTML Element </b>
+                        <b> Third HTML Element </b>
+                    </ChildComponent>
                 </>
             )
         }
