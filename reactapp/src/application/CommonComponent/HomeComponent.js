@@ -1,6 +1,10 @@
-import React, {Component} from "react";
+import React, {Component, PureComponent} from "react";
 
-export default class HomeComponent extends Component {
+//PureComponent has inbuilt implementation of shouldComponentUpdate
+export default class HomeComponent extends PureComponent {
+
+//export default class HomeComponent extends Component {
+    //creation life cycle method
     constructor(props){
         super(props)
         this.state = {
@@ -12,17 +16,68 @@ export default class HomeComponent extends Component {
         this.userNameRef = React.createRef();
         this.userAddressRef = React.createRef();
 
+        //we can't access html element before dom creation as render method is not called yet
+        //this.userNameRef.current.value = "Initial user name"
+        //this.userAddressRef.current.value = "Initial user address"
+
         this.counter = 1;
         this.counterInterval;
-        this.initializeTicks();
+        //this.initializeTicks();
     }
+
+    //we need to implement componentDidMount to change values after initialization
+    componentDidMount(){
+        console.log("component is mounted on browser / dom created")
+        //we can access html once component is mounted
+        this.userNameRef.current.value = "Initial user name"
+        this.userAddressRef.current.value = "Initial user address"
+
+        setTimeout(() => {
+            this.userNameRef.current.focus()
+        }, 3000);
+    }
+
+    //update life cycle method - decides whether re-render should happen or not
+    // shouldComponentUpdate(nextProps, nextState){
+    //     console.log(nextProps, nextState)
+
+    //     if (nextState.uName=== this.state.uName && nextState.uState === this.state.uState) {
+    //         return false //no need to call render method as states are same
+    //     } else {
+    //         return true
+    //     }
+
+    //     //return true
+    // }
+
+    getSnapshotBeforeUpdate(prevState, prevProps){
+        console.log("getSnapshotBeforeUpdate");
+        console.log("prevState", prevState);
+        console.log("prevProps", prevProps);
+        return {
+            prevState,
+            prevProps
+        }
+    }
+
+    componentDidUpdate(prevState, prevProps){
+        console.log("componentDidUpdate");
+        console.log("prevState",prevState);
+        console.log("prevProps", prevProps);
+
+        // this.setState({
+        //     uState : prevState.uState
+        // })
+    }
+
+
 
     textChange = (evt)=>{
 
         let target = evt.target;
         let value = target.value;
         let classList = target.classList;
-        console.log(classList)
+        console.log(value)
 
         if (classList.contains("userName")) {
             this.setState({
@@ -33,8 +88,6 @@ export default class HomeComponent extends Component {
                 uState : value
             })
         }
-        
-
 
         evt.preventDefault();
     }
@@ -81,8 +134,9 @@ export default class HomeComponent extends Component {
         clearInterval(this.counterInterval)
     }
 
+    //creation and update life cycle method
     render(){
-        
+        console.log("rendering the component!!!")
         return(
             <>
                 <h1>Home Component</h1>
