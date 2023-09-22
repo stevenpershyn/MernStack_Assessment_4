@@ -1,8 +1,10 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";//hoooks for navigations
+import { connect } from "react-redux";
+
 
 let Header = (props)=>{
-    let userName = "John!";
+    let userName = props.User ? props.User.userName : "Daniel";
     let goAboutHook = useNavigate(); //hook - an inbuilt feature to navigate at other page
 
     let goToAboutClick = (evt)=>{
@@ -29,4 +31,10 @@ let Header = (props)=>{
     )
 }
 
-export default Header;
+let mapStateToProps = (store)=>{
+    return {
+        User : store.userReducer.User
+    }
+}
+export default connect(mapStateToProps, null)(Header)
+//export default Header;

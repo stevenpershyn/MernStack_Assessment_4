@@ -9,10 +9,10 @@ import Home from "./CommonComponent/HomeComponent";
 import Footer from "./CommonComponent/FooterComponent";
 import About from "./CommonComponent/AboutComponent";
 import NotFound from "./CommonComponent/NotFound";
+import User from "./AppComponents/User/UserComponent";
 
 
 export default class Application extends Component {
-
         render(){
             return( 
                 <Router>
@@ -21,8 +21,9 @@ export default class Application extends Component {
                         <Routes>
                             <Route path="/" element={<Home user={"User"} userName={"Boubacar"}/>}/>
                             <Route path="/home" element={<Home user={"User"} userName={"Boubacar"}/>}/>
+                            <Route path="/user" element={<User />} />
                             <Route path="/about" element={<About />} />
-                            <Route path="/about/:id" element={<About />} />
+                            <Route path='/about/:id' element={<About />} />
                             <Route path="*" element={<NotFound />} />
                         </Routes>
                     <Footer />

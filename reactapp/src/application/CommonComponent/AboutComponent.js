@@ -2,8 +2,9 @@ import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 let About = ()=>{
-    let params = useParams();    
-    let param = params["id"] ? params["id"]: "No Params"; 
+    let params = useParams(); 
+    //debugger   
+    let param = params && params["id"] ? params["id"]: "No Params"; 
 
     let goToUser = useNavigate();
 

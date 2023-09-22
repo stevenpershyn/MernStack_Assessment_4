@@ -32,9 +32,9 @@ export default class HomeComponent extends PureComponent {
         this.userNameRef.current.value = "Initial user name"
         this.userAddressRef.current.value = "Initial user address"
 
-        setTimeout(() => {
-            this.userNameRef.current.focus()
-        }, 3000);
+        // setTimeout(() => {
+        //     this.userNameRef.current.focus()
+        // }, 3000);
     }
 
     //update life cycle method - decides whether re-render should happen or not

@@ -10,6 +10,11 @@ config = {
     //api/helloworld >>>
     devServer: {
         port: 9090,
+        // proxy: {
+        //     '/about/*': 'http://localhost:9000',
+        //   },
+        // open: {
+        //     target: ['index.html']},
         historyApiFallback : true //localhost:9092/user
     },
     // Rules of how webpack will take our files, complie & bundle them for the browser 
