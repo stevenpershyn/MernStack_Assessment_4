@@ -9,7 +9,8 @@ import Home from "./CommonComponent/HomeComponent";
 import Footer from "./CommonComponent/FooterComponent";
 import About from "./CommonComponent/AboutComponent";
 import NotFound from "./CommonComponent/NotFound";
-import User from "./AppComponents/User/UserComponent";
+//import User from "./AppComponents/User/UserComponent";
+import User from "./AppComponents/User/UserContainer";
 
 
 export default class Application extends Component {

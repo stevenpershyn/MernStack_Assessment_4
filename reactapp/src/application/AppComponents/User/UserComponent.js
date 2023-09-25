@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
-import { connect } from "react-redux";//require react UI and mapstateToProps and mapDispatchToProps
-import { AddUserToStore } from "../../../state/User/UserAction";
+//import { connect } from "react-redux";//require react UI and mapstateToProps and mapDispatchToProps
+//import { AddUserToStore } from "../../../state/User/UserAction";
  
-//export default class User extends Component{
-class User extends Component{
+export default class User extends Component{
+//class User extends Component{
     constructor(props){
         super(props);
         this.state = {
@@ -42,7 +42,8 @@ class User extends Component{
 
     loginUser = (evt)=>{
 
-        this.props.AddUser(this.state)
+        //this.props.AddUser(this.state)
+        this.props.SignIn(this.state)
         evt.preventDefault()
     }
 
@@ -88,25 +89,35 @@ class User extends Component{
     }
 }
 
-//subsciber
-let mapstateToProps = (store)=>{
-    return {
-        User : store.userReducer.User //can be accessed as props.User
+//a fallback to use
+User.defaultProps = {
+    User : {
+        userName : "Sohail Default",
+        password : 18,
+        street : "Somewhere on earth",
+        mobile : 6565656
     }
 }
 
-//publisher
-let mapdispatchToProps = (dispatch)=>{
-    return {
-        AddUser : (newUser)=>{ //can be accessed as props.AddUser
-            dispatch(AddUserToStore(newUser)) //dispatch the action - AddUserToStore
-        }
-    }
-}
+// //subsciber
+// let mapstateToProps = (store)=>{
+//     return {
+//         User : store.userReducer.User //can be accessed as props.User
+//     }
+// }
+
+// //publisher
+// let mapdispatchToProps = (dispatch)=>{
+//     return {
+//         AddUser : (newUser)=>{ //can be accessed as props.AddUser
+//             dispatch(AddUserToStore(newUser)) //dispatch the action - AddUserToStore
+//         }
+//     }
+// }
 
 
 //connect component with store to make it access the state as props defined in mapStateToProps
 //export default connect(mapstateToProps, null)(User) //to just make subscriber of state
 
 //now component becomes subscirber as well as publisher
-export default connect(mapstateToProps, mapdispatchToProps)(User)
+//export default connect(mapstateToProps, mapdispatchToProps)(User)
