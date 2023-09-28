@@ -29,8 +29,8 @@ export default class HomeComponent extends PureComponent {
     componentDidMount(){
         console.log("component is mounted on browser / dom created")
         //we can access html once component is mounted
-        this.userNameRef.current.value = "Initial user name"
-        this.userAddressRef.current.value = "Initial user address"
+        //this.userNameRef.current.value = "Initial user name"
+        //this.userAddressRef.current.value = "Initial user address"
 
         // setTimeout(() => {
         //     this.userNameRef.current.focus()
@@ -138,31 +138,52 @@ export default class HomeComponent extends PureComponent {
     render(){
         console.log("rendering the component!!!")
         return(
-            <>
-                <h1>Home Component</h1>
+            <div className={"loadimage form"} >
+                <h1>{this.state.title}</h1>
+                <b className="feature">{"Product Feature's :"}</b>
+                <ul>                     
+                    <li>Sign up new users</li>
+                    <li>Login existing users.</li>                
+                    <li>Allow user's to add to cart.</li>
+                    <li>Save the user's cart.</li>
+                    <li>Checkout and pay for items.</li>
+                    <li>Allow users to cancel the order.</li>
+                    <li>Allow users to reorder the cart.</li>
+                    <li>Add products/items to create product collection.</li>
+                    <li>Allow users to give ratings to each product.</li>
+                    <li>Have notifications on top right with logout.</li>
+                </ul>
 
-                {/* controlled component using div based structure */}
-                <div className="form col-md-12">
-                    <div className="col-md-8">
-                        <label>User Name </label>
-                        <input type="text" className="userName" value={this.state.uName} onChange={this.textChange}></input>
-                    </div>
-                    <div className="col-md-8">
-                        <label>Home Address </label>
-                        <input type="text" className="address" value={this.state.uState} onChange={this.textChange}></input>
-                    </div>
-                </div>
+                {/* <video width="320" height="240" controls autoplay>
+                    <source src={require('../../videos/video.mp4')} type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video> */}
+            </div>
+            // <>
+            //     <h1>Home Component</h1>
 
-                {/* uncontrolled component where we update the state at the end */}
-                <form action="/saveUser" onSubmit={this.formSubmit}>
-                    <b>User Name</b>
-                    <input type="text" ref={this.userNameRef} ></input>
-                    <b>Address</b>
-                    <input type="text" ref={this.userAddressRef} ></input>
+            //     {/* controlled component using div based structure */}
+            //     <div className="form col-md-12">
+            //         <div className="col-md-8">
+            //             <label>User Name </label>
+            //             <input type="text" className="userName" value={this.state.uName} onChange={this.textChange}></input>
+            //         </div>
+            //         <div className="col-md-8">
+            //             <label>Home Address </label>
+            //             <input type="text" className="address" value={this.state.uState} onChange={this.textChange}></input>
+            //         </div>
+            //     </div>
 
-                    <button type="submit" >Save</button>
-                </form>
-            </>
+            //     {/* uncontrolled component where we update the state at the end */}
+            //     <form action="/saveUser" onSubmit={this.formSubmit}>
+            //         <b>User Name</b>
+            //         <input type="text" ref={this.userNameRef} ></input>
+            //         <b>Address</b>
+            //         <input type="text" ref={this.userAddressRef} ></input>
+
+            //         <button type="submit" >Save</button>
+            //     </form>
+            // </>
         )
     }
 }
