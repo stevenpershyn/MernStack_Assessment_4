@@ -2,7 +2,7 @@ let express = require("express");
 let productRoute = express.Router();
 const productDataModel = require("../data-model/productDataModel");
 
-productRout.post("/api/signinup", (req, res)=>{
+productRoute.post("/api/signinup", (req, res)=>{
     let product = req.body
 
     productDataModel.findOne({name:req.body.name}).then((existingProduct)=>{
