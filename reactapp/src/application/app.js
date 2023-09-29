@@ -9,6 +9,7 @@ import Home from "./CommonComponent/HomeComponent";
 import Footer from "./CommonComponent/FooterComponent";
 import About from "./CommonComponent/AboutComponent";
 import NotFound from "./CommonComponent/NotFound";
+import Product from "./CommonComponent/ProductComponent";
 //import User from "./AppComponents/User/UserComponent";
 import User from "./AppComponents/User/UserContainer";
 import UserHook from "./AppComponents/User/UserHook";
@@ -28,6 +29,7 @@ export default class Application extends Component {
                             <Route path="/about" element={<About />} />
                             <Route path='/about/:id' element={<About />} />
                             <Route path="*" element={<NotFound />} />
+                            <Route path="/product" element={<Product />}/>
                         </Routes>
                     <Footer />
                     </Suspense>
